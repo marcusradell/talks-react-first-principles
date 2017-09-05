@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "eslint": "^4.6.1",
+    "eslint-config-prettier": "^2.4.0",
+    "prettier": "^1.6.1",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-scripts": "1.0.11"
@@ -10,7 +13,8 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/marcusnielsen/talks-react-first-principles.git"
-  }, "bugs": {
+  },
+  "bugs": {
     "url": "https://github.com/marcusnielsen/talks-react-first-principles/issues"
   },
   "homepage": "https://github.com/marcusnielsen/talks-react-first-principles#readme",
@@ -18,6 +22,17 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 9009 -s public",
+    "build-storybook": "build-storybook -s public"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^3.2.6",
+    "@storybook/addon-links": "^3.2.6",
+    "@storybook/react": "^3.2.8",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.3.0"
   }
 }
