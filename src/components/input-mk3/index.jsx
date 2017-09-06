@@ -1,12 +1,6 @@
 import React, { Component } from "react";
 import makeModel from "./model";
-
-const makeActions = setState => updaters =>
-  Object.entries(updaters).reduce(
-    (acc, [key, value]) =>
-      Object.assign({}, acc, { [key]: event => setState(value(event)) }),
-    {}
-  );
+import { makeActions } from "./utils";
 
 export default class Input extends Component {
   constructor(props) {
@@ -16,8 +10,7 @@ export default class Input extends Component {
 
     this.state = initialState;
 
-    this.actions = makeActions(this.setState)(updaters);
-    debugger;
+    this.actions = makeActions(this.setState.bind(this))(updaters);
 
     this.onChange = this.onChange.bind(this);
   }
