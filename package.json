@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@linasmatkasse/planck-state": "^2.2.2",
     "eslint": "^4.6.1",
     "eslint-config-prettier": "^2.4.0",
     "prettier": "^1.6.1",
