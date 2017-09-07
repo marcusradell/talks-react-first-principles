@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import makeModel from "./model";
 import { makeActions } from "./utils";
+import makeModel from "./model";
+import makeView from "./view";
 
 export default class Input extends Component {
   constructor(props) {
@@ -9,18 +10,11 @@ export default class Input extends Component {
     const { initialState, updaters } = makeModel(this.props);
 
     this.state = initialState;
-
     this.actions = makeActions(this.setState.bind(this))(updaters);
-
-    this.onChange = this.onChange.bind(this);
-  }
-
-  onChange(domEvent) {
-    const { value } = domEvent.target;
-    this.actions.setValue(value);
+    this.view = makeView({ actions: this.actions, props: this.props });
   }
 
   render() {
-    return <input onChange={this.onChange} value={this.state.value} />;
+    return <this.view state={this.state} />;
   }
 }

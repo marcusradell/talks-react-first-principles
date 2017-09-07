@@ -4,6 +4,9 @@
     "jest": true
   },
   "rules": {
-    "linebreak-style": "off"
+    "linebreak-style": "off",
+    "react/prop-types": "off",
+    "no-unused-vars": "off",
+    "import/no-extraneous-dependencies": "off"
   }
 }
