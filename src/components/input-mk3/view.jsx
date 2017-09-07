@@ -7,5 +7,5 @@ export default ({ actions, props }) => {
     actions.setValue(value);
   };
 
-  return ({ value }) => <input onChange={onChange} value={value} />;
+  return ({ state }) => <input onChange={onChange} value={state.value} />;
 };
