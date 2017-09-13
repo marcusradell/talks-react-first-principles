@@ -9,7 +9,7 @@ const setValueUpdater = value => state => Object.assign({}, state, { value });
 // Each action will take some eventData and bind it to the updater.
 // setState will run our callback, giving it the state, getting a new state back.
 const makeActions = setState => ({
-  setValue: value => setState(setValueUpdater(value))
+  setValue: eventData => setState(setValueUpdater(eventData))
 });
 
 export default class Input extends Component {
