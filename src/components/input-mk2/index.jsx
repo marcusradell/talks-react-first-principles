@@ -1,13 +1,12 @@
 import React, { Component } from "react";
 
-// Initial state is extracted out from the class.
+// Initial state.
 const makeInitialState = value => ({ value });
 
-// State updater function extracted from the class.
+// State updater.
 const setValueUpdater = value => state => Object.assign({}, state, { value });
 
-// Each action will take some eventData and give to the setValueUpdater.
-// setState will run our callback, giving it the state, getting a new state back.
+// State utility function.
 const makeActions = setState => ({
   setValue: value => setState(setValueUpdater(value))
 });
