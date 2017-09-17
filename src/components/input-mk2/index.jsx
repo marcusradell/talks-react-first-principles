@@ -15,7 +15,7 @@ export default class Input extends Component {
   constructor(props) {
     super(props);
     const { initialValue } = this.props;
-    // create initial state and actions.
+    // Create model and bind it to the controller.
     this.state = makeInitialState(initialValue);
     this.actions = makeActions(this.setState.bind(this));
     this.onChange = this.onChange.bind(this);

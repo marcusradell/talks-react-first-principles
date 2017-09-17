@@ -3,17 +3,17 @@ import { storiesOf } from "@storybook/react";
 import makeComponent from "./index";
 
 storiesOf("Input", module).add("plus ultra", () => {
-  const component = makeComponent({ initialValue: "Go beyond!" });
+  const component1 = makeComponent({ initialValue: "comp 1" });
   const component2 = makeComponent({ initialValue: "comp 2" });
   const component3 = makeComponent({ initialValue: "comp 3" });
 
   // We can subscribe to any action from outside the component.
-  component.actionStreams.setValue.forEach(data =>
+  component1.actionStreams.setValue.forEach(data =>
     console.log("actionStreams.setValue:", data)
   );
 
   // We can combine states and subscribe to the combined stream. Really good for Forms.
-  component.stateStream
+  component1.stateStream
     .combineLatest(
       component2.stateStream,
       component3.stateStream,
@@ -24,7 +24,7 @@ storiesOf("Input", module).add("plus ultra", () => {
   return (
     <div>
       <div>
-        <component.View />
+        <component1.View />
       </div>
       <div style={{ marginTop: "15px" }}>
         <component2.View />
