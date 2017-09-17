@@ -8,7 +8,7 @@ const setValueUpdater = value => state => Object.assign({}, state, { value });
 
 // State utility function.
 const makeActions = setState => ({
-  setValue: value => setState(setValueUpdater(value))
+  setValue: eventData => setState(setValueUpdater(eventData))
 });
 
 export default class Input extends Component {
